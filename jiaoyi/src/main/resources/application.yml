@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/shoppingmall?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=true
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 
+    database: 0
+    jedis:      pool:        min-idle: 5        max-wait: 2        max-idle: 30        max-active: 30    timeout: 1500
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: file:${path.filelocation},file:${path.htmllocation}
+  servlet:
+    multipart:      max-file-size: 20971520
+      max-request-size: 209715200
+server:
+  port: 8083
+  max-http-header-size: 10000000
+path:
+  filelocation: D:/project/img/
+  htmllocation: D:/project/html/
